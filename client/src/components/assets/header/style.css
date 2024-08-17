@@ -1,0 +1,87 @@
+header div.header{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: var(--white);
+    box-shadow: 0 0 5px var(--light-grey);
+    z-index: 100;
+}
+header div.header__wrapper{
+    position: relative;
+    min-height: 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+/* logo */
+div.header-logo-wrapper a{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+div.header-logo-wrapper a.header-logo-link svg{
+    fill: var(--accent)
+}
+ul.logo{
+    min-width: 25rem;
+}
+ul.logo li.logo__item b{
+    background-color: transparent;
+    margin-right: 1rem;
+    color: var(--dark-green);
+}
+ul.logo li.logo__item span{
+    color: var(--accent);
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    line-height: 1.4;
+}
+ul.logo li.logo__item em{
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 0.04rem;
+    margin: 0 .2rem;
+}
+ul.logo li.logo__item:first-child{
+    color: var(--dark);
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+}
+ul.logo li.logo__item:last-child{
+    color: grey;
+    font-size: .8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.04rem;
+}
+
+@media screen and (max-width: 991px) {
+    header div.header {
+        padding: 0 1.5rem;
+    }
+
+}
+@media screen and (max-width: 768px) {
+    header div.header__wrapper {
+        min-height: 5rem;
+    }
+    div.header-logo-wrapper a.header-logo-link svg {
+        display: none;
+    }
+    ul.logo li.logo__item:first-child {
+        font-size: 1.35rem;
+        letter-spacing: 0.03rem;
+    }
+    ul.logo li.logo__item span {
+        font-size: 1.45rem;
+        letter-spacing: 0.03rem;
+    }
+    ul.logo li.logo__item:last-child {
+        font-size: .68rem;
+        letter-spacing: 0.03rem;
+    }
+}

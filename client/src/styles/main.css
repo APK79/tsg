@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,600;0,800;1,400&family=Noto+Sans:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+:root{
+    --primary-bg: #f2f3f4;
+    --light-bg: #fafafa;
+    --black: #181818;
+    --dark: #2f4f4f;
+    --light-dark: #778899;
+    --dark-green: #006400;
+    --grey: #808080;
+    --light-grey: #e3e3e3;
+    --white: #fff;
+    --accent: #ff4500;
+    --shadow: 0 0 .5rem 0 rgba(0, 0, 0, 0.2), 0 .2rem .7rem 0 rgba(0, 0, 0, 0.21);
+    --shadow-2: 0 .1rem .1rem rgba(0, 0, 0, 0.1), 0 .2rem .2rem rgba(0, 0, 0, 0.1), 0 .4rem .4rem rgba(0, 0, 0, 0.1), 0 .8rem .8rem rgba(0, 0, 0, 0.1), 0 1.6rem 1.6rem rgba(0, 0, 0, 0.1);
+}
+
+html, body{
+    font-family: 'Noto Sans', sans-serif;
+    color: var(--dark);
+}
+html{
+    font-size: 62.5%;
+}
+.container{
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    width: clamp(102.4rem, 95vw, 147rem);
+}
+h1{
+    font-size: 2.5rem;
+}
+h2{
+    font-size: 2rem;
+}
+h3{
+    font-size: 1.5rem;
+}
+/* NAV */
+.nav {
+
+}
+.text-center{
+    text-align: center;
+}
+.text-right{
+    text-align: right;
+}
+/*@media screen and (max-width: 1430px) {
+    .container {
+      max-width: 128rem;
+    }
+}*/
+@media screen and (max-width: 1024px) {
+    .container {
+      padding: 0 1rem;
+      width: 100%;
+    }
+}
+@media screen and (max-width: 991px) {
+    .container {
+      padding: 0;
+    }
+}
+@media screen and (max-width: 480px) {
+    html{
+        font-size: 50%;
+    }
+    .d-none-xs {
+        display: none !important;
+    }
+}

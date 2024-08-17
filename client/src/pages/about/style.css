@@ -1,0 +1,135 @@
+.about-content{
+    padding: 2rem 0;
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.05rem;
+}
+.about-people__head {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0 1rem;
+}
+.about-wrapper {
+    position: relative;
+}
+.about__img-wrapper {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+.about__img-wrapper div.about__img-wrapper__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: hsla(0, 0%, 0%, 0.668);
+}
+.about__img-wrapper h1 {
+    color: var(--light-grey);
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.about__img-wrapper p {
+    color: var(--light-grey);
+    font-size: 1.5rem;
+    font-style: italic;
+    letter-spacing: 0.05rem;
+    line-height: 3rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--light-grey);
+}
+.about-content span{
+    color: var(--dark-green);
+}
+ul.about-content__list{
+    font-size: 1.5rem;
+    line-height: 3rem;
+    padding: 1rem 0 0 3rem;
+}
+ul.about-content__list li{
+    list-style-type: ' ✧   ';
+}
+ul.about-content__list li::marker {
+    color: var(--accent);
+}
+div.about-people .people__wrapper {
+    display: flex;
+    justify-content: space-around;
+    padding: 3rem 0;
+    text-align: center;
+}
+div.about-people .people__item__img-wrapper svg {
+    fill: var(--light-dark);
+    width: 15rem;
+    aspect-ratio: 1/1;
+}
+div.about-people .people__item__title {
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    line-height: 3rem;
+    letter-spacing: 0.05rem;
+}
+div.about-people .people__item__title__company-post {
+    font-weight: 700;
+}
+div.about-people .people__item__title__work-time {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+}
+.about-phone{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    padding: 2rem 0 5rem 0;
+}
+.about-phone p {
+    color: var(--white);
+    font-size: 1.6rem;
+    letter-spacing: 0.25rem;
+    padding: 1.5rem 3rem;
+    background-color: var(--light-dark);
+    margin-top: 1rem;
+    border-radius: 3rem;
+}
+@media screen and (max-width: 991px) {
+    .about-wrapper {
+        padding: 0 1rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    div.about-people .people__wrapper {
+        flex-direction: column;
+    }
+    div.about-people .people__item__title {
+        padding: 1rem 0 5rem;
+        line-height: 2.5rem;
+    }
+    .about-phone {
+        font-size: 1.1rem;
+    }
+    .about__img-wrapper h1 {
+        font-size: 1.9rem;
+    }
+    .about__img-wrapper p {
+        font-size: 1.05rem;
+        letter-spacing: 0.02rem;
+        line-height: 2rem;
+        border-bottom: 1px solid var(--light-grey);
+    }
+}
+@media screen and (max-width: 480px){
+    .about__img-wrapper p {
+        display: none;
+    }
+    .about__img-wrapper h1 {
+        font-size: 1.4rem;
+    }
+}

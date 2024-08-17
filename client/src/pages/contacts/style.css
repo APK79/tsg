@@ -1,0 +1,123 @@
+.contacts {
+    background-color: var(--light-bg);
+    padding-bottom: 5rem;
+}
+.contacts h1 {
+    padding: 3rem;
+    font-weight: 700;
+}
+.contacts h3 {
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+.contacts__wrapper {
+    letter-spacing: 0.05rem;
+}
+.contacts__adress-header {
+    font-size: 1.4rem;
+    padding: 0 4rem 3rem;
+}
+.contacts__work-time__wrapper {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+}
+.contacts__work-time__item__phone {
+    padding: 3rem 3rem 0;
+}
+ul.contacts__work-time, .contacts__people {
+    width: 50%;
+    background-color: var(--white);
+    padding: 4rem;
+    border: 1px solid var(--light-grey);
+    border-radius: 1rem;
+}
+.contacts__work-time__item__desc {
+    padding: 1rem 3rem;
+    margin: 1rem;
+    background-color: var(--primary-bg);
+    border-radius: 1rem;
+}
+.contacts__work-time__item__desc span {
+    display: inline-block;
+    min-width: 14rem;
+}
+div.contacts .people__item__img-wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 5rem;
+    row-gap: 1rem;
+    margin: 2rem 1rem;
+}
+div.contacts .people__item__img-wrapper svg {
+    width: 9rem;
+    fill: var(--light-dark);
+}
+div.contacts .people__item__title__name {
+    font-weight: 700;
+}
+div.contacts .people__item__title__work-time {
+    font-size: 1.4rem;
+}
+div.contacts .people__item__title__work-time p {
+    font-style: italic;
+}
+.contacts__map {
+    padding: 0.5rem;
+    background-color: var(--white);
+    border: 1px solid var(--light-grey);
+    border-radius: 1rem;
+}
+@media screen and (max-width: 991px) {
+    .contacts__wrapper {
+        padding: 0 2rem;
+    }
+    .contacts__work-time__wrapper {
+        flex-direction: column;
+    }
+    ul.contacts__work-time, .contacts__people {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 768px){
+    .contacts__wrapper {
+        padding: 0 1rem;
+    }
+    ul.contacts__work-time, .contacts__people {
+        padding: 3rem 2rem;
+    }
+    .contacts__adress-header {
+        font-size: 1.2rem;
+    }
+    .contacts__adress-header h2 {
+        font-size: 1.6rem;
+    }
+    
+}
+@media screen and (max-width: 480px){
+    .contacts__adress-header {
+        font-size: 1.1rem;
+    }
+    .contacts__adress-header h2 {
+        font-size: 1.5rem;
+    }
+    .contacts__work-time__item__desc span {
+        display: block;
+        text-align: center;
+    }
+    .contacts h1, .contacts h3, .contacts__adress-header, .contacts__work-time__item__desc, .contacts__work-time__item__phone, div.contacts .people__item__img-wrapper {
+        text-align: center;
+    }
+    .contacts__work-time__item__phone {
+        padding: 2rem 3rem 1rem;
+    }
+    div.contacts .people__item__img-wrapper {
+        flex-direction: column;
+        margin: 3rem 1rem;
+    }
+    
+}
+

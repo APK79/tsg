@@ -4,7 +4,7 @@ import PostModel from "../models/post.js";
 export const getAll = async (req, res) => {
     try {
 
-        const posts = await PostModel.find().populate('user').exec();
+        const posts = await PostModel.find().populate( { path: "user", select: ["fullName", "avatarUrl"] } ).exec();
         
         res.json(posts);
 
@@ -21,37 +21,78 @@ export const getOne = async(req, res) => {
 
         const postId = req.params.id;
        
-        PostModel.findByIdAndUpdate({
-            _id: postId,
-        }, 
-        {
-             $inc: { viewCount: 1 },
-        },
-        {
-            returnDocument: 'after',
-        },
-            (err, doc) => {
-                if(err) {
-                    console.log(err);
-                    return res.status(500).json({
-                        message: "не удалось получить статьи",
-                    });
-                }
-                if(!doc){
-                    return res.status(404).json({
-                        message: 'Статья не найдена',
-                    })
-                }
+        PostModel.findOneAndUpdate(
+            {  _id: postId,  },
+            {  $inc: { viewsCount: 1 },  },
+            {  returnDocument: "After",  } 
+            )   
+                .then ( doc => {
+                    if (!doc) {
+                        console.log(err);
+                        res.status(404).json( { message: "Статья не найдена" } );
+                    }
+                    
+                    res.json(doc);
 
-                res.json(doc);
-                
-            }
-        );
+                } )
+                .catch ( (err) => {
+                    console.log(err);
+                    res.status(404).json( { message: "Статья не найдена" } );
+                })
 
     } catch (err) {
         console.log(err);
         res.status(500).json({
             message: "не удалось получить статьи",
+        });
+    }
+}
+
+export const remove = async(req, res) => {
+    try {
+
+        const postId = req.params.id;
+       
+        PostModel.findOneAndDelete( {  _id: postId,  }, )   
+                .then ( doc => {
+                    if (!doc) throw Error;
+                    res.json({ message: 'статья удалена' });
+                } )
+                .catch ( (err) => {
+                    console.log(err);
+                    res.status(404).json( { message: "Статья не найдена" } );
+                })
+
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({
+            message: "не удалось получить статью",
+        });
+    }
+}
+export const update = async (req, res) => {
+    try {
+
+        const postId = req.params.id;
+       
+        await PostModel.updateOne(
+            {  _id: postId,  }, 
+            {
+                title: req.body.title,
+                text: req.body.text,
+                imgUrl: req.body.imgUrl,
+                tags: req.body.tags,
+                user: req.userId,
+            }
+
+        );
+            res.json({ message: 'Готово' });
+    }
+
+    catch (err) {
+        console.log(err);
+        res.status(500).json({
+            message: "не удалось обновить статью",
         });
     }
 }

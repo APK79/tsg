@@ -22,10 +22,10 @@ app.post('/auth/registr', regValidation, UserController.registration);
 app.get('/auth/user', checkAuth, UserController.getUser);
 
 app.get('/posts', PostController.getAll);
-app.get('/posts:id', PostController.getOne);
+app.get('/posts/:id', PostController.getOne);
 app.post('/posts', checkAuth, postCreateValidation, PostController.create);
-//app.delete('/posts', PostController.remove);
-//app.patch('/posts', PostController.update);
+app.delete('/posts/:id', checkAuth, PostController.remove);
+app.patch('/posts/:id', checkAuth, postCreateValidation, PostController.update);
 
 app.listen( PORT, (err) => {
     (err) ? console.log (err) : console.log ('Server On');

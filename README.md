@@ -1,1 +1,2 @@
-Learning project for TSG on React
+# Learning project 
+## on React / Node / MongoDB

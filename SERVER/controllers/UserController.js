@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import { validationResult } from "express-validator";
-import UserModel from "../models/user.js";
+import UserModel from "../models/user-model.js";
 
 
 export const registration = async (req, res) => {
@@ -18,7 +18,8 @@ export const registration = async (req, res) => {
     
         const doc = new UserModel({
             email: req.body.email,
-            fullName: req.body.fullName,
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
             phone: req.body.phone,
             avatarUrl: req.body.avatarUrl,
             passwordHash: hash,

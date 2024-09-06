@@ -9,6 +9,7 @@ import News from "../pages/news/newslist/news.jsx";
 import Contacts from "../pages/contacts/contacts.jsx";
 import ErrorPage from "../pages/errorpage/errorpage.jsx";
 import Breadcrumbs from "../components/breadcrumbs/breadcrumbs.jsx";
+import Login from '../pages/auth/login.jsx'
 
 const Router = () => {
 function Layout() {
@@ -60,8 +61,14 @@ const router = createBrowserRouter([
             path: 'news/:id',
             element: <News />,
             handle: { crumb: () => <span>Новость</span>}   }]
-        }  ]
         },
+        {
+          path: '/login',
+          element: <Login />,
+          handle: { crumb: () => <span>Авторизация</span>} 
+        },
+        ] 
+      },
       ]
     }
   ])

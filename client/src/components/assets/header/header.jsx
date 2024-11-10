@@ -1,5 +1,5 @@
 import "./style.css";
-import Logo from '../../reused/logo/logo.jsx';
+import Logo from '../../UI/logo/logo.jsx';
 import Navbar from '../navbar/navbar.jsx';
 import { NavLink } from "react-router-dom";
 

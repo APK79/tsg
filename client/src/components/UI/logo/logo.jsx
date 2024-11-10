@@ -2,7 +2,7 @@ import { ReactComponent as HeaderLogoImg } from '../../img/logo.svg';
 
 
 const Logo = () => {
-    return ( <HeaderLogoImg />);
+    return ( <HeaderLogoImg /> );
 }
 
 export default Logo;

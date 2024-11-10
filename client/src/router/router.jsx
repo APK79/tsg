@@ -1,5 +1,6 @@
 import { createBrowserRouter, Outlet, Link, RouterProvider, ScrollRestoration } from "react-router-dom";
-
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext.js";
 import Header from '../components/assets/header/header.jsx';
 import Footer from '../components/assets/footer/footer.jsx';
 import Main from '../pages/main/main.jsx';
@@ -11,18 +12,23 @@ import ErrorPage from "../pages/errorpage/errorpage.jsx";
 import Breadcrumbs from "../components/breadcrumbs/breadcrumbs.jsx";
 import Login from '../pages/auth/login.jsx'
 
+
 const Router = () => {
-function Layout() {
-  return (
-    <div className="App">
-        <Header />
-        <Breadcrumbs/>
-        <Outlet />
-        <Footer />
-        <ScrollRestoration />
-      </div>
-  );
-}
+
+  const {isAuth, setIsAuth} = useContext(AuthContext);
+  console.log(isAuth);
+
+  function Layout() {
+    return (
+      <div className="App">
+          <Header />
+          <Breadcrumbs/>
+          <Outlet />
+          <Footer />
+          <ScrollRestoration />
+        </div>
+    );
+  }
 
 const router = createBrowserRouter([
   {
